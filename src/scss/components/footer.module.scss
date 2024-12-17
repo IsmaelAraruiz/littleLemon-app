@@ -1,0 +1,148 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.footer {
+  grid-area: footer;
+  padding: 2rem;
+
+  .logoSection {
+    @include flex(flex, row, center, center);
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+
+    .logoFooter {
+      width: 100%;
+      height: 20rem;
+      object-fit: contain;
+    }
+  }
+
+  .navigationSection {
+    @include flex(flex, column, center, center);
+    margin-bottom: 2rem;
+
+    h2 {
+      @include typography(
+        $font-family-karla,
+        $font-size-titleUpperCase-20pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      text-align: center;
+      li {
+        .link {
+          @include typography(
+            $font-family-karla,
+            $font-size-categories-16pt,
+            $font-weight-bold,
+            $secondaryColor-black
+          );
+        }
+      }
+    }
+  }
+
+  .contactSection {
+    @include flex(flex, column, center, center);
+    margin-bottom: 2rem;
+
+    h2 {
+      @include typography(
+        $font-family-karla,
+        $font-size-titleUpperCase-20pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+      margin-bottom: 1rem;
+    }
+
+    address {
+      ul {
+        text-align: center;
+        li {
+          a {
+            @include typography(
+              $font-family-karla,
+              $font-size-categories-16pt,
+              $font-weight-bold,
+              $secondaryColor-black
+            );
+          }
+        }
+      }
+    }
+  }
+
+  .socialMediaSection {
+    @include flex(flex, column, center, center);
+    margin-bottom: 2rem;
+
+    h2 {
+      @include typography(
+        $font-family-karla,
+        $font-size-titleUpperCase-20pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      text-align: center;
+      li {
+        a {
+          @include typography(
+            $font-family-karla,
+            $font-size-categories-16pt,
+            $font-weight-bold,
+            $secondaryColor-black
+          );
+        }
+      }
+    }
+  }
+}
+
+@include media-query("desktop") {
+  .footer {
+    @include grid(4, 1rem);
+
+    .logoSection {
+      @include flex(flex, row, center, center);
+    }
+
+    .navigationSection {
+      @include flex(flex, column, flex-start, flex-start);
+      padding: 0 5rem;
+
+      ul {
+        text-align: left;
+      }
+    }
+
+    .contactSection {
+      @include flex(flex, column, flex-start, flex-start);
+      padding: 0 5rem;
+
+      address {
+        ul {
+          text-align: left;
+        }
+      }
+    }
+
+    .socialMediaSection {
+      @include flex(flex, column, flex-start, flex-start);
+      padding: 0 5rem;
+
+      ul {
+        text-align: left;
+      }
+    }
+  }
+}

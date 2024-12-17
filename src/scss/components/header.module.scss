@@ -1,0 +1,27 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.header {
+  grid-area: header;
+  @include flex(flex, row, space-between, center);
+  gap: 5rem;
+  padding: 0 5rem;
+
+  .logoContainer {
+    @include flex(flex, row, center, center);
+    width: 20rem;
+    height: 10rem;
+
+    .logo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+@include media-query("desktop") {
+  .header {
+    @include flex(flex, row, center, center);
+  }
+}

@@ -1,0 +1,210 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  margin-top: 20rem;
+  margin-bottom: 4rem;
+
+  .menuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+
+    h3 {
+      @include typography(
+        $font-family-markazi-text,
+        $font-size-title-64pt,
+        $font-weight-medium,
+        $secondaryColor-black
+      );
+    }
+
+    button {
+      padding: 2rem 2rem;
+      background-color: $primaryColor-yellow;
+      @include typography(
+        $font-family-karla,
+        $font-size-categories-16pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+      border-radius: $border-radious;
+      cursor: pointer;
+      transition: $transition;
+      width: 20rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: $secondaryColor-lightGray;
+      border-radius: $border-radious;
+      width: 100%;
+      max-width: 40rem;
+      min-height: 40rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .cardImg {
+        width: 100%;
+        height: 30rem;
+        border-radius: 1.6rem 1.6rem 0 0;
+      }
+
+      .cardContent {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        flex-grow: 1;
+        justify-content: space-between;
+
+        .cardHeading {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          h4 {
+            @include typography(
+              $font-family-karla,
+              $font-size-card-title-18pt,
+              $font-weight-bold,
+              $secondaryColor-black
+            );
+          }
+
+          p {
+            @include typography(
+              $font-family-karla,
+              $font-size-card-title-18pt,
+              $font-weight-bold,
+              $secondaryColor-orange
+            );
+          }
+        }
+
+        p {
+          @include typography(
+            $font-family-karla,
+            $font-size-card-paragraph-16pt,
+            $font-weight-regular,
+            $primaryColor-green
+          );
+          text-align: justify;
+          margin: 2rem 0;
+        }
+
+        button {
+          padding: 1.5rem;
+          background-color: $primaryColor-yellow;
+          border-radius: $border-radious;
+          cursor: pointer;
+
+          @include typography(
+            $font-family-karla,
+            $font-size-card-paragraph-16pt,
+            $font-weight-bold,
+            $secondaryColor-black
+          );
+          transition: $transition;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-query("mobile") {
+  .menuContainer {
+    padding: 0 2rem;
+    margin-top: 10rem;
+  }
+
+  .menuHeader {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+      font-size: $font-size-title-64pt;
+    }
+    button {
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+  }
+}
+
+@include media-query("tablet") {
+  .menuContainer {
+    padding: 0 5rem;
+    margin-top: 15rem;
+  }
+
+  .menuHeader {
+    padding: 0 2rem;
+    text-align: left;
+    h3 {
+      font-size: $font-size-title-64pt;
+    }
+    button {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  .cardsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@include media-query("desktop") {
+  .menuContainer {
+    padding: 0 30rem;
+    margin-top: 20rem;
+  }
+
+  .menuHeader {
+    padding: 0 5rem;
+    justify-content: space-between;
+    text-align: left;
+    h3 {
+      font-size: $font-size-title-64pt;
+    }
+    button {
+      padding: 2rem 3rem;
+    }
+  }
+
+  .cardsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

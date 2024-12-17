@@ -1,0 +1,20 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@include media-query("mobile") {
+  .menuLogo {
+    display: block;
+  }
+}
+
+@include media-query("tablet") {
+    .menuLogo {
+      display: block;
+    }
+  }
+
+@include media-query("desktop") {
+  .menuLogo {
+    display: none;
+  }
+}

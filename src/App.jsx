@@ -1,18 +1,21 @@
-import Header from "./components/Header";
-import Nav from "./components/Nav";
+import React from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from "./components/Layout";
 import Main from "./components/Main";
-import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 
 
 function App() {
-
-
   return (
     <>
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </>
   )
 }

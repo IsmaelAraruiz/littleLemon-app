@@ -1,0 +1,65 @@
+//! Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+//! Colors
+
+// Primary Colors
+$primaryColor-green: #495e57;
+$primaryColor-yellow: #f4ce14;
+
+// Secondary Colors
+$secondaryColor-orange: #ee9972;
+$secondaryColor-beige: #fbdabb;
+$secondaryColor-lightGray: #edefee;
+$secondaryColor-black: #333333;
+
+//! Fonts
+
+// Define the font family
+$font-family-markazi-text: "Markazi Text", serif;
+$font-family-karla: "Karla", serif;
+
+// Define font sizes
+$font-size-title-64pt: 64pt;
+$font-size-subtitle-40pt: 40pt;
+$font-size-descriptive-18pt: 18pt;
+$font-size-titleUpperCase-20pt: 20pt;
+$font-size-categories-16pt: 16pt;
+$font-size-card-title-18pt: 18pt;
+$font-size-card-paragraph-16pt: 16pt;
+$font-size-card-highlight-16pt: 16pt;
+
+// Define font weights
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-extra-bold: 800;
+$font-weight-bold: bold;
+
+//? Example usage:
+
+// Title Fonts
+//? $font-title-64pt: $font-family-markazi-text $font-size-title-64pt $font-weight-medium $secondaryColor-black;   // Main title font
+//? $font-titleUpperCase-20pt: $font-family-karla $font-size-titleUpperCase-20pt $font-weight-bold $secondaryColor-black; // Uppercase title font
+
+// Subtitle Fonts
+//? $font-subTitle-40pt: $font-family-markazi-text $font-size-subtitle-40pt $font-weight-regular $secondaryColor-black;   // Subtitle font
+
+// Descriptive and General Text Fonts
+//? $font-descriptive-18pt: $font-family-karla $font-size-descriptive-18pt $font-weight-medium $secondaryColor-black;   // Descriptive text font
+//? $font-categories-16pt: $font-family-karla $font-size-categories-16pt $font-weight-extra-bold $secondaryColor-black;   // Category font
+
+// Card Fonts
+//? $font-card-title-18pt: $font-family-karla $font-size-card-title-18pt $font-weight-bold $secondaryColor-black;   // Card title font
+//? $font-card-paragraph-16pt: $font-family-karla $font-size-card-paragraph-16pt $font-weight-regular $primaryColor-green;   // Card paragraph font
+//? $font-card-highlight-16pt: $font-family-karla $font-size-card-highlight-16pt $font-weight-medium $primaryColor-green;   // Card highlighted text font
+
+//! Transition animation
+
+// Transition
+$transition: all 300ms ease;
+
+//! Rounded Corners
+
+$border-radious: 16px;

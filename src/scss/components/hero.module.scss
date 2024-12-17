@@ -1,0 +1,161 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.heroMainContainer {
+  background-color: $primaryColor-green;
+  padding: 4rem 0;
+
+  section {
+    position: relative;
+    color: #fff;
+    padding: 1rem 10rem;
+
+    .heroContainer {
+      position: relative;
+      z-index: 2;
+
+      h1 {
+        @include typography(
+          $font-family-markazi-text,
+          $font-size-title-64pt,
+          $font-weight-medium,
+          $primaryColor-yellow
+        );
+      }
+
+      h2 {
+        @include typography(
+          $font-family-markazi-text,
+          $font-size-subtitle-40pt,
+          $font-weight-regular,
+          #fff
+        );
+      }
+
+      .description {
+        @include typography(
+          $font-family-karla,
+          $font-size-descriptive-18pt,
+          $font-weight-medium,
+          #fff
+        );
+        max-width: 40rem;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+      }
+
+      .btnReserve {
+        padding: 1rem 3rem;
+        background-color: $primaryColor-yellow;
+        @include typography(
+          $font-family-karla,
+          $font-size-categories-16pt,
+          $font-weight-bold,
+          $secondaryColor-black
+        );
+        border-radius: $border-radious;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .imageContainer {
+      position: absolute;
+      right: 12%;
+      top: 5%;
+      width: 40rem;
+      z-index: 1;
+
+      .heroImage {
+        width: 100%;
+        height: 50rem;
+        border-radius: $border-radious;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+@include media-query("mobile") {
+  .heroMainContainer {
+    padding: 2rem 0;
+
+    section {
+      .heroContainer {
+        padding-right: 0;
+
+        h1 {
+          font-size: 35pt;
+        }
+
+        h2 {
+          font-size: 30pt;
+          margin-bottom: 3rem;
+        }
+
+        .description {
+          font-size: 16pt;
+        }
+      }
+
+      .imageContainer {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media-query("tablet") {
+  .heroMainContainer {
+    padding: 3rem 0;
+
+    section {
+      .heroContainer {
+        padding-right: 0;
+
+        h1 {
+          font-size: 35pt;
+        }
+
+        h2 {
+          font-size: 30pt;
+          margin-bottom: 3rem;
+        }
+
+        .description {
+          font-size: 16pt;
+        }
+      }
+
+      .imageContainer {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media-query("desktop") {
+  .heroMainContainer {
+    section {
+      padding: 1rem 30rem;
+      .heroContainer {
+        padding-right: 26rem;
+        h1 {
+          font-size: $font-size-title-64pt;
+        }
+
+        .description {
+          font-size: $font-size-descriptive-18pt;
+        }
+      }
+
+      .imageContainer {
+        display: block;
+      }
+    }
+  }
+}

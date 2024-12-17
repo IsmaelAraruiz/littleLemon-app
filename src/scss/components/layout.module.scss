@@ -1,0 +1,17 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.container {
+  @include grid(1, 1);
+  max-width: 100%;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  .main {
+    grid-area: main;
+  }
+}
