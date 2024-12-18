@@ -3,7 +3,7 @@ import styles from "../scss/components/main.module.scss"
 import Hero from './Hero'
 import Menu from './Menu'
 
-const Main = () => {
+const Home = () => {
   return (
     <div className={styles.mainContent}>
       <Hero />
@@ -12,4 +12,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Home

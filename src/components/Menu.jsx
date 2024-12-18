@@ -28,7 +28,9 @@ const Menu = () => {
                                         <h4>{recipe.title}</h4>
                                         <p>${recipe.price}</p>
                                     </div>
-                                    <p>{recipe.description}</p>
+                                    <div className={styles.cardDescriptionContainer}>
+                                        <p>{recipe.description}</p>
+                                    </div>
                                     <button>Order Now</button>
                                 </div>
                             </div>

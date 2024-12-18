@@ -1,0 +1,102 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.noReservation {
+  @include flex(flex, column, center, center);
+  margin-top: 5rem;
+  @include typography(
+    $font-family-markazi-text,
+    $font-size-title-64pt,
+    $font-weight-bold,
+    $secondaryColor-black
+  );
+}
+
+.confirmedBookingContainer {
+  @include flex(flex, column, center, center);
+  padding: 5rem;
+  color: #333;
+
+  h1 {
+    @include typography(
+      $font-family-markazi-text,
+      $font-size-title-64pt,
+      $font-weight-bold,
+      $primaryColor-green
+    );
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  dl {
+    @include flex(flex, column, center, flex-start);
+    background-color: $secondaryColor-lightGray;
+    border-radius: $border-radious;
+    width: 40rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+
+    dt {
+      @include typography(
+        $font-family-karla,
+        $font-size-categories-16pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+    }
+    dd {
+      @include typography(
+        $font-family-karla,
+        $font-size-card-highlight-16pt,
+        $font-weight-bold,
+        $primaryColor-green
+      );
+      margin-bottom: 3rem;
+    }
+  }
+
+  button {
+    padding: 1rem 3rem;
+    background-color: $primaryColor-yellow;
+    width: 40rem;
+    @include typography(
+      $font-family-karla,
+      $font-size-categories-16pt,
+      $font-weight-bold,
+      $secondaryColor-black
+    );
+    border-radius: $border-radious;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@include media-query("mobile") {
+  .confirmedBookingContainer {
+    h1 {
+      @include typography(
+        $font-family-markazi-text,
+        $font-size-subtitle-40pt,
+        $font-weight-bold,
+        $primaryColor-green
+      );
+    }
+  }
+}
+
+@include media-query("tablet") {
+  .confirmedBookingContainer {
+    h1 {
+      @include typography(
+        $font-family-markazi-text,
+        $font-size-subtitle-40pt,
+        $font-weight-bold,
+        $primaryColor-green
+      );
+    }
+  }
+}

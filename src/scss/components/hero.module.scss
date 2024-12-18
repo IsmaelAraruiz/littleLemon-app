@@ -3,17 +3,14 @@
 
 .heroMainContainer {
   background-color: $primaryColor-green;
-  padding: 4rem 0;
+  padding: 2rem 10rem;
 
   section {
-    position: relative;
+    @include flex(flex, row, center, center);
+    gap: 2rem;
     color: #fff;
-    padding: 1rem 10rem;
 
     .heroContainer {
-      position: relative;
-      z-index: 2;
-
       h1 {
         @include typography(
           $font-family-markazi-text,
@@ -64,17 +61,15 @@
     }
 
     .imageContainer {
-      position: absolute;
-      right: 12%;
-      top: 5%;
-      width: 40rem;
-      z-index: 1;
+      position: relative;
 
       .heroImage {
+        position: absolute;
         width: 100%;
-        height: 50rem;
+        height: 40rem;
         border-radius: $border-radious;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        top: 10%;
       }
     }
   }
@@ -82,25 +77,12 @@
 
 @include media-query("mobile") {
   .heroMainContainer {
-    padding: 2rem 0;
+    @include flex(flex, column, center, center);
+    padding: 2rem;
 
     section {
-      .heroContainer {
-        padding-right: 0;
-
-        h1 {
-          font-size: 35pt;
-        }
-
-        h2 {
-          font-size: 30pt;
-          margin-bottom: 3rem;
-        }
-
-        .description {
-          font-size: 16pt;
-        }
-      }
+      flex-direction: column;
+      text-align: center;
 
       .imageContainer {
         display: none;
@@ -111,25 +93,12 @@
 
 @include media-query("tablet") {
   .heroMainContainer {
-    padding: 3rem 0;
+    @include flex(flex, column, center, center);
+    padding: 3rem;
 
     section {
-      .heroContainer {
-        padding-right: 0;
-
-        h1 {
-          font-size: 35pt;
-        }
-
-        h2 {
-          font-size: 30pt;
-          margin-bottom: 3rem;
-        }
-
-        .description {
-          font-size: 16pt;
-        }
-      }
+      flex-direction: column;
+      text-align: center;
 
       .imageContainer {
         display: none;
@@ -140,21 +109,18 @@
 
 @include media-query("desktop") {
   .heroMainContainer {
-    section {
-      padding: 1rem 30rem;
-      .heroContainer {
-        padding-right: 26rem;
-        h1 {
-          font-size: $font-size-title-64pt;
-        }
+    @include flex(flex, column, center, center);
+    padding: 2rem 10rem;
 
-        .description {
-          font-size: $font-size-descriptive-18pt;
-        }
-      }
+    section {
+      @include flex(flex, row, space-around, center);
+      width: 100%;
+      padding: 0 30rem;
 
       .imageContainer {
         display: block;
+        width: 35rem;
+        height: 40rem;
       }
     }
   }

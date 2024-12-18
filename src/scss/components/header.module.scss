@@ -11,8 +11,25 @@
     @include flex(flex, row, center, center);
     width: 20rem;
     height: 10rem;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     .logo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .cartLogoContainer {
+    @include flex(flex, row, center, center);
+    cursor: pointer;
+
+    .cartLogo {
       width: 100%;
       height: auto;
       object-fit: contain;

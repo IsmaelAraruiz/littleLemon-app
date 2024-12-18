@@ -1,0 +1,102 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.bookingFormContainer {
+  @include flex(flex, row, center, center);
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+
+  form {
+    @include flex(flex, column, space-around, flex-start);
+    background-color: $secondaryColor-lightGray;
+    border-radius: $border-radious;
+    padding: 2rem;
+    height: auto;
+    width: 40rem;
+
+    h1 {
+      align-self: center;
+      @include typography(
+        $font-family-markazi-text,
+        $font-size-title-64pt,
+        $font-weight-medium,
+        $secondaryColor-black
+      );
+    }
+
+    .field {
+      @include flex(flex, column, center, flex-start);
+      width: 100%;
+      padding: 0 2rem;
+      height: 10rem;
+
+      .error {
+        align-self: center;
+        @include typography(
+          $font-family-karla,
+          16pt,
+          $font-weight-bold,
+          #db0909
+        );
+      }
+
+      .success {
+        align-self: center;
+        @include typography(
+          $font-family-karla,
+          16pt,
+          $font-weight-bold,
+          $primaryColor-green
+        );
+      }
+
+      label {
+        @include typography(
+          $font-family-karla,
+          $font-size-categories-16pt,
+          $font-weight-extra-bold,
+          $secondaryColor-black
+        );
+        margin-bottom: 1rem;
+      }
+
+      input {
+        padding: 1.1rem;
+        border-radius: $border-radious;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      select {
+        padding: 1.1rem;
+        border-radius: $border-radious;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      margin-top: 5rem;
+      align-self: center;
+      width: 100%;
+      padding: 1rem 3rem;
+      background-color: $primaryColor-yellow;
+      @include typography(
+        $font-family-karla,
+        $font-size-categories-16pt,
+        $font-weight-bold,
+        $secondaryColor-black
+      );
+      border-radius: $border-radious;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
