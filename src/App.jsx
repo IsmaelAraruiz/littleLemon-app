@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <ReservationProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/littleLemon-app">
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
